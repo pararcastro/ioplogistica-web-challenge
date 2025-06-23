@@ -97,7 +97,7 @@ textarea:not([rows]) {
 
 
   font-family: "Roboto Condensed", sans-serif;
-  color: white;
+  color: var(--black);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
