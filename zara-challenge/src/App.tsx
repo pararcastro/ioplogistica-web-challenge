@@ -1,9 +1,17 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+import  CharacterCard from './components/CharacterCard';
+import SearchBar from './components/SearchBar';
+
+import type { Character } from './interfaces';
+
+
+
 
 function App() {
-  const [characters, setCharacters] = useState<[]>([]);
+  const [characters, setCharacters] = useState<Character[]>([]);
+  const [filteredCharacters, setFilteredCharacters] = useState<Character[]>(characters);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,8 +25,8 @@ function App() {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log('Fetched Dragon Ball characters:', data);
-        setCharacters(data.items || []);
+        setCharacters(data?.items || []);
+        setFilteredCharacters(data?.items || []);
 
       } catch (error) {
           setError(error.message);
@@ -29,6 +37,15 @@ function App() {
 
     fetchCharacters();
   }, []);
+
+
+  const handleSearch = (query: string) => {
+    const filteredCharacters = characters.filter(character => character.name.toLowerCase().includes(query.toLowerCase()));
+    console.log("Filtered Characters:", filteredCharacters);
+    
+    
+    setFilteredCharacters(filteredCharacters);
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -41,20 +58,14 @@ function App() {
   return (
     <div>
       <h1>Dragon Ball</h1>
+      <SearchBar onSearch={handleSearch} />
       <div className="characters-grid">
-        {characters.length > 0 ? (
-          characters.map(character => (
-            <div key={character.id} className="character-card">
-              <img 
-                src={`${character.image}`}
-                alt={character.name}
-              />
-              <h2>{character.name}</h2>
-              <p>{character.description || 'No description available.'}</p>
-            </div>
+        {filteredCharacters.length > 0 ? (
+          filteredCharacters.map(character => (
+         <CharacterCard key={character.id} character={character} />
           ))
         ) : (
-          <p>No characters found.</p>
+          <p>No se encontraron personajes</p>
         )}
       </div>
     </div>
