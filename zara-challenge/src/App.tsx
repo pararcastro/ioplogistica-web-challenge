@@ -3,9 +3,23 @@ import './App.css'
 
 import  CharacterCard from './components/CharacterCard';
 import SearchBar from './components/SearchBar';
+import logo from './assets/Dragon-Ball-Logo.png';
+import heart from './assets/heart.svg';
 
 import type { Character } from './interfaces';
 
+
+const HeaderMenu = () => { 
+  return (
+    <nav>
+      <img className='logo' src={logo} alt="go home button logo" />
+      <div className='liked-characters'>
+        <img src={heart} alt="favourites button" />
+        <span>3</span>
+      </div>
+    </nav>
+  )
+ }
 
 
 
@@ -57,16 +71,19 @@ function App() {
 
   return (
     <div>
-      <h1>Dragon Ball</h1>
-      <SearchBar onSearch={handleSearch} />
-      <div className="characters-grid">
-        {filteredCharacters.length > 0 ? (
-          filteredCharacters.map(character => (
-         <CharacterCard key={character.id} character={character} />
-          ))
-        ) : (
-          <p>No se encontraron personajes</p>
-        )}
+
+      <HeaderMenu />
+      <div className="container">
+        <SearchBar onSearch={handleSearch} />
+        <div className="characters-grid">
+          {filteredCharacters.length > 0 ? (
+            filteredCharacters.map(character => (
+           <CharacterCard key={character.id} character={character} />
+            ))
+          ) : (
+            <p>No se encontraron personajes</p>
+          )}
+        </div>
       </div>
     </div>
   )

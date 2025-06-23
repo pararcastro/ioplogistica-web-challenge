@@ -1,26 +1,50 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+
+/* Navigation Menu START */
+
+nav {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--black);
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  max-width: 200px;
 }
 
 
+@media (width >=600px) {
+  nav {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.liked-characters {
+  display: flex;
+  gap: 1rem;
+}
+
+.liked-characters span {
+  color: white;
+  font-size: 20px;
+}
+
+
+.container {
+  padding: 2rem 1rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+
+@media(width >=600px) {
+  .container {
+    padding: 2rem 3rem;
+  }
+}
 
 
 /* SearchBar */
@@ -47,6 +71,12 @@
   transition: border-bottom 200ms ease-in-out;
 }
 
+.magnifier-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* Character Card */
 
 .characters-grid {
@@ -66,6 +96,11 @@
 .character-card:hover .character-info {
   background-color: var(--marvel-red);
   transition: background-color 200ms ease-in;
+}
+
+.character-card:hover .character-card__like-button {
+  filter: brightness(0) invert(1);
+  transition: filter 200ms ease-in;
 }
 
 .character-card a {
@@ -97,7 +132,7 @@
   right: 0;
   bottom: 0;
   border-bottom: 12px solid white;
-  border-left: 12px solid black;
+  border-left: 12px solid transparent;
 }
 
 
@@ -106,3 +141,6 @@
   font-size: 14px;
   text-transform: uppercase;
 }
+
+
+
