@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import type { Character } from "../interfaces";
-// import heart-outline from "../assets/heart-outline.svg";
-import heartOutline from "../assets/heart-outline.png"; // Adjust the path as necessary
+import heartOutline from "../assets/heart-outline.svg"; 
 
 type Props = {
   character: Character;
