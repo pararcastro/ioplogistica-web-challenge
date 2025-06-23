@@ -5,10 +5,18 @@ import heart from "../assets/heart.svg";
 
 type Props = {
   character: Character;
+  likedCharacters?: Character[],
+  handleLike: (character: Character) => void;
 };  
 
 
-const CharacterCard: FC<Props> = ({ character }) => {
+const CharacterCard: FC<Props> = ({ character, likedCharacters, handleLike }) => {
+
+const toggleLike = (character: Character) => {
+    handleLike(character);
+};
+
+
   return (
      <article key={character.id} className="character-card">
             <img
@@ -19,8 +27,9 @@ const CharacterCard: FC<Props> = ({ character }) => {
         <div className="character-info">
             <p>{character.name}</p>
              <img
+                onClick={() => toggleLike(character)}
                 className="character-card__like-button" 
-                src={heart}
+                src={likedCharacters?.some(hero => hero.id === character.id) ? heart : heartOutline}
                 width={20} height={20} 
                 alt="like button" 
                 aria-label="button" />

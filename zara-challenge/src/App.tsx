@@ -4,6 +4,7 @@ import HeaderMenu from './components/HeaderMenu';
 
 import { HomePage } from './pages/HomePage';
 import { FavouritesPage } from './pages/FavouritesPage';
+import { CharacterProvider } from './context/CharactersContext';
 
 
 
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+  <CharacterProvider>
     <BrowserRouter>
       <HeaderMenu />
       <Routes>
@@ -19,7 +21,8 @@ function App() {
         <Route path="/favourites" element={<FavouritesPage />} />
       </Routes>
     </BrowserRouter>
-    </>
+    </CharacterProvider>
+  </>
   )
 }
 
