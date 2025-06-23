@@ -20,65 +20,89 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
 
-  to {
-    transform: rotate(360deg);
-  }
+
+
+/* SearchBar */
+
+.search-bar__wrapper {
+  position: relative;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+.search-bar__wrapper input {
+  width: 100%;
+  height: 2.5rem;
+  outline: none;
+  border: none;
+  padding-left: 1.5rem;
+  border-bottom: 1px solid gray;
+  transition: border-bottom 300ms ease-in-out;
 }
 
-.card {
-  padding: 2em;
+.search-bar__wrapper input:focus {
+  border-bottom: 3px solid var(--marvel-red);
+  outline-offset: .5rem;
+  transition: border-bottom 200ms ease-in-out;
 }
 
-.read-the-docs {
-  color: #888;
-}
+/* Character Card */
 
 .characters-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto 0;
 }
 
 .character-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
+  background-color: var(--black);
+  color: white;
+  transition: background-color 200ms ease-in;
 }
 
-.character-card:hover {
-  transform: translateY(-5px);
+.character-card:hover .character-info {
+  background-color: var(--marvel-red);
+  transition: background-color 200ms ease-in;
 }
 
-.character-card img {
+.character-card a {
+  min-height: 13rem;
+  background: lightgray;
+}
+
+
+.character-card__image {
   width: 100%;
-  height: 250px;
   object-fit: cover;
+  aspect-ratio: 1/1;
+  object-position: top;
 }
 
-.character-card h2 {
+.character-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem;
-  margin: 0;
-  font-size: 1.2rem;
-  color: #333;
+  min-height: 5rem;
+
+  position: relative;
 }
 
-.character-card p {
-  padding: 0 1rem 1rem;
+.character-info:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-bottom: 12px solid white;
+  border-left: 12px solid black;
+}
+
+
+.character-info p {
   margin: 0;
-  color: #666;
-  font-size: 0.9rem;
+  font-size: 14px;
+  text-transform: uppercase;
 }
