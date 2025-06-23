@@ -31,7 +31,7 @@ export function CharacterProvider({ children }: CharacterProps): JSX.Element {
 
     function handleLike(character: Character) {
 
-        if (!likedCharacters.some(character => character.id === character.id)) {
+        if (!likedCharacters.some(likedCharacter => likedCharacter.id === character.id)) {
             setLikedCharacters(prevLikedCharacters => {
                 return [
                     ...prevLikedCharacters,
@@ -43,7 +43,7 @@ export function CharacterProvider({ children }: CharacterProps): JSX.Element {
             })
         } else {
             setLikedCharacters(prevLikedCharacters => {
-                return prevLikedCharacters.filter(character => character.id !== character.id)
+                return prevLikedCharacters.filter(likedCharacter => likedCharacter.id !== character.id)
             })
         }
     }

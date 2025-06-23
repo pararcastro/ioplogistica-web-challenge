@@ -8,7 +8,7 @@ export const FavouritesPage = () => {
     return (
         <div className="container">
             <h1>Favourites</h1>
-                <section className="heroes-list">
+                <section className="characters-grid">
                 {likedCharacters.length > 0 &&
                     likedCharacters.map(character => 
                         <CharacterCard 
