@@ -1,6 +1,6 @@
-import { createContext, useState, useContext, ReactNode } from "react"
+import { createContext, useState, useContext, } from "react"
 import type { Character } from "../interfaces";
-import type { JSX } from "react";
+import type { JSX, ReactNode } from "react";
 
 
 interface CharacterContextType {
@@ -12,8 +12,6 @@ interface CharacterContextType {
 interface CharacterProps {
     children: ReactNode;
 }
-
-
 
 export const CharacterContext = createContext<CharacterContextType | undefined>(undefined)
 

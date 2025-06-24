@@ -15,7 +15,7 @@ const HeaderMenu = () => {
       </Link>
       <Link to="/favourites" className='liked-characters'>
         <img src={heart} alt="favourites button" />
-        <span>{likedCharacters.length}</span>
+        <span data-testid='fav-counter'>{likedCharacters.length}</span>
       </Link>
     </nav>
   )
