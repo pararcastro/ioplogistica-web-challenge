@@ -30,7 +30,7 @@ Una aplicación web del universo Dragon Ball, desarrollada con React, TypeScript
 1. **Clonar el repositorio**
 ```bash
 git clone [https://github.com/pararcastro/ioplogistica-web-challenge.git]
-cd zara-challenge
+cd ioplogistica-web-challenge
 ```
 
 2. **Instalar dependencias**
