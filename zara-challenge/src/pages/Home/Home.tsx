@@ -1,51 +1,21 @@
-import { useEffect, useState } from "react";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import SearchBar from "../../components/SearchBar/SearchBar"
 import Loader from "../../components/Loader/Loader";
 import '../../App.css';
 
-import type { Character } from '../../interfaces';
-import { DragonBallAPI } from "../../services/apiService";  
-
 import { useCharacterContext } from "../../context/CharactersContext";
-
+import { useCharacterSearch } from "../../hooks/useCharacterSearch";
 
 export const Home = () => {
-    const [characters, setCharacters] = useState<Character[]>([]);
-    const [filteredCharacters, setFilteredCharacters] = useState<Character[]>(characters);
     const { handleLike, likedCharacters } = useCharacterContext();
-
-
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-
-
-    useEffect(() => {
-    const fetchCharacters = async () => {
-        setLoading(true);
-
-        try {
-          const data = await DragonBallAPI.getCharacters();
-          setCharacters(data?.items || []);
-          setFilteredCharacters(data?.items || []);
-        } catch (error) {
-            setError(error instanceof Error ? error.message : 'Hubo un error al cargar los personajes');
-        } finally {
-        setLoading(false);
-        }
-    };
-
-    fetchCharacters();
-    }, []);
-
-
-    const handleSearch = (query: string) => {
-        const filteredCharacters = characters.filter(character => character.name.toLowerCase().includes(query.toLowerCase()));
-    
-        setFilteredCharacters(filteredCharacters);
-    };
-
-
+    const { 
+        filteredCharacters, 
+        loading, 
+        searchLoading, 
+        error, 
+        searchQuery, 
+        setSearchQuery 
+    } = useCharacterSearch();
 
     if (loading) {
         return <Loader />;
@@ -55,13 +25,18 @@ export const Home = () => {
         return <div>Error: {error}</div>;
     }
 
-
     return (
         <>
           <div className="container">
-            <SearchBar onSearch={handleSearch} totalSearchResults={filteredCharacters.length} />
+            <SearchBar 
+                onSearch={setSearchQuery} 
+                totalSearchResults={filteredCharacters.length}
+                value={searchQuery}
+            />
             <div className="characters-grid">
-              {filteredCharacters.length > 0 ? (
+              {searchLoading ? (
+                <Loader />
+              ) : filteredCharacters.length > 0 ? (
                 filteredCharacters.map(character => (
                   <CharacterCard 
                     key={character.id} 
@@ -76,4 +51,4 @@ export const Home = () => {
           </div>
         </>
     )
- }
+}

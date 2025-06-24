@@ -5,15 +5,10 @@ import './SearchBar.css';
 type SearchBarProps = {
     onSearch: (query: string) => void;
     totalSearchResults: number;
+    queryValue: string;
 }
 
-const SearchBar = ({ onSearch, totalSearchResults }: SearchBarProps) => {
-  const [query, setQuery] = useState("");
-
-  const handleSearch = (value: string) => {
-    setQuery(value);
-    onSearch(value);
-  };
+const SearchBar = ({ onSearch, totalSearchResults, queryValue }: SearchBarProps) => {
 
   return (
     <div className="search-bar">
@@ -21,8 +16,8 @@ const SearchBar = ({ onSearch, totalSearchResults }: SearchBarProps) => {
           <img className='magnifier-icon' src={magnifierIcon}  alt="" />
           <input
               type="text"
-              value={query}
-              onChange={(e) => handleSearch(e.target.value)}
+              value={queryValue}
+              onChange={(e) => onSearch(e.target.value)}
               placeholder="Buscar personaje..."
           />
       </div>
