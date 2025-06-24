@@ -19,6 +19,7 @@ const SearchBar = ({ onSearch, totalSearchResults, queryValue }: SearchBarProps)
               value={queryValue}
               onChange={(e) => onSearch(e.target.value)}
               placeholder="Buscar personaje..."
+              data-testid="search-bar"
           />
       </div>
       {totalSearchResults > 0 &&
