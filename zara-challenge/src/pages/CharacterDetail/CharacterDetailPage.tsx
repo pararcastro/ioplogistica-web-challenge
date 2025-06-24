@@ -28,9 +28,7 @@ export const CharacterDetail: FC = () => {
             try {
                 const req = await fetch(`https://dragonball-api.com/api/characters/${character.id}`);
                 const data = await req.json();
-                setTransformations(data.transformations || []); 
-                console.log(data.transformations);
-                
+                setTransformations(data.transformations || []);                 
             } catch (error) {
                 console.error("Error fetching character transformations:", error);
             }
@@ -65,7 +63,7 @@ export const CharacterDetail: FC = () => {
             <div className="transformation-list-wrapper center-content">
                 <h2>Transformations</h2>
                 <div className="transformation-list ">
-                    {!transformations && <h2>We haven't found any transformations on the DB...</h2>}
+                    {transformations.length === 0 && <h2>No hemos encontrado transformaciones en la base de datos...</h2>}
                     {transformations && transformations.map(transformation => {
                         return (
                             <article key={transformation.id} className="transformation-list__item">

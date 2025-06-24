@@ -1,9 +1,10 @@
 import './App.css'
 import { BrowserRouter, Routes, Route, } from 'react-router';
-import HeaderMenu from './components/HeaderMenu';
 
-import { HomePage } from './pages/HomePage';
-import { FavouritesPage } from './pages/FavouritesPage';
+import HeaderMenu from './components/HeaderMenu/HeaderMenu';
+
+import { Home } from './pages/Home/Home';
+import { FavouritesCharacter } from './pages/FavouriteCharacters/FavouriteCharacters';
 import { CharacterProvider } from './context/CharactersContext';
 import { CharacterDetail } from './pages/CharacterDetail/CharacterDetailPage';
 
@@ -18,8 +19,8 @@ function App() {
     <BrowserRouter>
       <HeaderMenu />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/favourites" element={<FavouritesPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/favourites" element={<FavouritesCharacter />} />
         <Route path="/character/:id" element={<CharacterDetail />} />
       </Routes>
     </BrowserRouter>

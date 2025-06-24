@@ -1,0 +1,32 @@
+
+.search-bar__wrapper {
+  position: relative;
+  justify-content: center;
+}
+
+
+.search-bar__wrapper input {
+  width: 100%;
+  height: 2.5rem;
+  outline: none;
+  border: none;
+  padding-left: 1.5rem;
+  border-bottom: 1px solid gray;
+  transition: border-bottom 300ms ease-in-out;
+}
+
+.search-bar__wrapper input:focus {
+  border-bottom: 3px solid var(--red);
+  outline-offset: .5rem;
+  transition: border-bottom 200ms ease-in-out;
+}
+
+.magnifier-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-bar__total {
+  margin-top: 0.5rem;
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import magnifierIcon from "../assets/magnifier.svg";
-
+import magnifierIcon from "../../assets/magnifier.svg";
+import './SearchBar.css'; 
 
 type SearchBarProps = {
     onSearch: (query: string) => void;
@@ -27,7 +27,9 @@ const SearchBar = ({ onSearch, totalSearchResults }: SearchBarProps) => {
           />
       </div>
       {totalSearchResults > 0 &&
-                <p className="search-bar__total"><span>{totalSearchResults}</span> RESULTS</p>
+                <p className="search-bar__total">
+                  <span>{totalSearchResults}</span> RESULTS
+                </p>
             }
     </div>
   );

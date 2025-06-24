@@ -1,7 +1,9 @@
 import { Link } from 'react-router';
-import logo from '../assets/Dragon-Ball-Logo.png';
-import heart from '../assets/heart.svg';
-import { useCharacterContext } from '../context/CharactersContext';
+import logo from '../../assets/Dragon-Ball-Logo.png';
+import heart from '../../assets/heart.svg';
+import { useCharacterContext } from '../../context/CharactersContext';
+
+import './HeaderMenu.css';
 
 const HeaderMenu = () => { 
   const { likedCharacters } = useCharacterContext();

@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--black);
+}
+
+.logo {
+  max-width: 200px;
+}
+
+
+@media (width >=600px) {
+  nav {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.liked-characters {
+  display: flex;
+  gap: 1rem;
+}
+
+.liked-characters span {
+  color: white;
+  font-size: 20px;
+}

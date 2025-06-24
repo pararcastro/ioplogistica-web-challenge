@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
-import CharacterCard from "../components/CharacterCard"
-import SearchBar from "../components/SearchBar"
+import CharacterCard from "../../components/CharacterCard/CharacterCard";
+import SearchBar from "../../components/SearchBar/SearchBar"
+import Loader from "../../components/Loader/Loader";
+import '../../App.css';
 
-import type { Character } from '../interfaces';
-import { useCharacterContext } from "../context/CharactersContext";
+import type { Character } from '../../interfaces';
+
+import { useCharacterContext } from "../../context/CharactersContext";
 
 
-export const HomePage = () => {
+export const Home = () => {
     const [characters, setCharacters] = useState<Character[]>([]);
     const [filteredCharacters, setFilteredCharacters] = useState<Character[]>(characters);
     const { handleLike, likedCharacters } = useCharacterContext();
 
 
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string>("");
+    const [error, setError] = useState<string | null>(null);
 
 
     useEffect(() => {
@@ -30,7 +33,7 @@ export const HomePage = () => {
         setFilteredCharacters(data?.items || []);
 
         } catch (error) {
-            setError(error);
+            setError(error.message);
         } finally {
         setLoading(false);
         }
@@ -49,7 +52,7 @@ export const HomePage = () => {
 
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <Loader />;
     }
 
     if (error) {

@@ -1,8 +1,10 @@
 import type { FC } from "react";
-import type { Character } from "../interfaces";
-import heartOutline from "../assets/heart-outline.svg"; 
-import heart from "../assets/heart.svg"; 
+import type { Character } from "../../interfaces";
+import heartOutline from "../../assets/heart-outline.svg"; 
+import heart from "../../assets/heart.svg"; 
 import { Link } from "react-router";
+
+import './CharacterCard.css';
 
 type Props = {
   character: Character;

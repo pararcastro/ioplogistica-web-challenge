@@ -1,8 +1,10 @@
-import CharacterCard from "../components/CharacterCard";
-import {useCharacterContext} from "../context/CharactersContext";
+import CharacterCard from "../../components/CharacterCard/CharacterCard";
+import {useCharacterContext} from "../../context/CharactersContext";
+
+import './FavouriteCharacters.css';
 
 
-export const FavouritesPage = () => {
+export const FavouritesCharacter = () => {
     const {likedCharacters, handleLike} = useCharacterContext();
 
     return (
