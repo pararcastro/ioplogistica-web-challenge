@@ -66,7 +66,7 @@ nav {
 }
 
 .search-bar__wrapper input:focus {
-  border-bottom: 3px solid var(--marvel-red);
+  border-bottom: 3px solid var(--red);
   outline-offset: .5rem;
   transition: border-bottom 200ms ease-in-out;
 }
@@ -75,6 +75,10 @@ nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.search-bar__total {
+  margin-top: 0.5rem;
 }
 
 /* Character Card */
@@ -94,7 +98,7 @@ nav {
 }
 
 .character-card:hover .character-info {
-  background-color: var(--marvel-red);
+  background-color: var(--red);
   transition: background-color 200ms ease-in;
 }
 
@@ -141,6 +145,4 @@ nav {
   font-size: 14px;
   text-transform: uppercase;
 }
-
-
 

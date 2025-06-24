@@ -1,7 +1,13 @@
 import { useState } from "react";
 import magnifierIcon from "../assets/magnifier.svg";
 
-const SearchBar = ({ onSearch }: { onSearch: (query: string) => void }) => {
+
+type SearchBarProps = {
+    onSearch: (query: string) => void;
+    totalSearchResults: number;
+}
+
+const SearchBar = ({ onSearch, totalSearchResults }: SearchBarProps) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = (value: string) => {
@@ -20,6 +26,9 @@ const SearchBar = ({ onSearch }: { onSearch: (query: string) => void }) => {
               placeholder="Buscar personaje..."
           />
       </div>
+      {totalSearchResults > 0 &&
+                <p className="search-bar__total"><span>{totalSearchResults}</span> RESULTS</p>
+            }
     </div>
   );
 }

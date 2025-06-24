@@ -60,7 +60,7 @@ export const HomePage = () => {
     return (
         <>
           <div className="container">
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar onSearch={handleSearch} totalSearchResults={filteredCharacters.length} />
             <div className="characters-grid">
               {filteredCharacters.length > 0 ? (
                 filteredCharacters.map(character => (

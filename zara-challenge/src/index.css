@@ -93,7 +93,8 @@ textarea:not([rows]) {
 :root {
 
   --black: #242424;
-  --marvel-red: #EC1D24;
+  --light-gray: #e9e6e6;
+  --red: #EC1D24;
 
 
   font-family: "Roboto Condensed", sans-serif;
