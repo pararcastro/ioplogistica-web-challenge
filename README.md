@@ -8,7 +8,7 @@ Una aplicación web del universo Dragon Ball, desarrollada con React, TypeScript
 - **Búsqueda inteligente**: Encuentra personajes específicos con búsqueda en tiempo real
 - **Sistema de favoritos**: Guarda tus personajes favoritos
 - **Responsive design**: Optimizada para dispositivos móviles y desktop
-- **Navegación fluida**: Experiencia SPA con React Router
+- **Navegación**: React Router
 
 ## 🛠️ Stack Tecnológico
 
@@ -29,11 +29,13 @@ Una aplicación web del universo Dragon Ball, desarrollada con React, TypeScript
 
 1. **Clonar el repositorio**
 ```bash
-git clone [https://github.com/pararcastro/ioplogistica-web-challenge.git]
-cd ioplogistica-web-challenge
+git clone https://github.com/pararcastro/ioplogistica-web-challenge.git
 ```
 
 2. **Instalar dependencias**
+```bash
+cd ioplogistica-web-challenge
+```
 ```bash
 npm install
 ```
