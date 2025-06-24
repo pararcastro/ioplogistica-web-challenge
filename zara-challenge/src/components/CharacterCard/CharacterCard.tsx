@@ -37,7 +37,9 @@ const toggleLike = (character: Character) => {
                 src={likedCharacters?.some(hero => hero.id === character.id) ? heart : heartOutline}
                 width={20} height={20} 
                 alt="like button" 
-                aria-label="button" />
+                aria-label="button"
+                data-testid={likedCharacters?.some(hero => hero.id === character.id) ? 'filled-heart' : 'empty-heart'}
+                />
         </div>  
       
     </article>
