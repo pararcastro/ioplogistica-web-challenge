@@ -2,18 +2,14 @@ import { useLocation } from "react-router";
 import { useCharacterContext } from "../../context/CharactersContext";
 import { useEffect, useState, type FC } from "react";
 
-import type { Character } from "../../interfaces";
+import type { Character, Transformation } from "../../interfaces";
+import { DragonBallAPI } from "../../services/apiService";
 
 import heart from '../../assets/heart.svg';
 import heartOutline from '../../assets/heart-outline.svg';
 import './CharacterDetail.css';
 
 
-interface Transformation {
-    id: string;
-    name: string;
-    image: string;
-}
 
 
 
@@ -26,8 +22,7 @@ export const CharacterDetail: FC = () => {
     useEffect(() => {
         const fetchCharacterDetails = async () => {
             try {
-                const req = await fetch(`https://dragonball-api.com/api/characters/${character.id}`);
-                const data = await req.json();
+                const data = await DragonBallAPI.getCharacterById(character.id);
                 setTransformations(data.transformations || []);                 
             } catch (error) {
                 console.error("Error fetching character transformations:", error);

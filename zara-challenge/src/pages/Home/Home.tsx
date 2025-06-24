@@ -5,6 +5,7 @@ import Loader from "../../components/Loader/Loader";
 import '../../App.css';
 
 import type { Character } from '../../interfaces';
+import { DragonBallAPI } from "../../services/apiService";  
 
 import { useCharacterContext } from "../../context/CharactersContext";
 
@@ -24,16 +25,11 @@ export const Home = () => {
         setLoading(true);
 
         try {
-        const response = await fetch("https://dragonball-api.com/api/characters?limit=50");
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setCharacters(data?.items || []);
-        setFilteredCharacters(data?.items || []);
-
+          const data = await DragonBallAPI.getCharacters();
+          setCharacters(data?.items || []);
+          setFilteredCharacters(data?.items || []);
         } catch (error) {
-            setError(error.message);
+            setError(error instanceof Error ? error.message : 'Hubo un error al cargar los personajes');
         } finally {
         setLoading(false);
         }
