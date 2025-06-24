@@ -31,7 +31,7 @@ export const Home = () => {
             <SearchBar 
                 onSearch={setSearchQuery} 
                 totalSearchResults={filteredCharacters.length}
-                value={searchQuery}
+                queryValue={searchQuery}
             />
             <div className="characters-grid">
               {searchLoading ? (
