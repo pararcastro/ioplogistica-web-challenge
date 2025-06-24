@@ -1,54 +1,74 @@
-# React + TypeScript + Vite
+# Dragon Ball Character Explorer 🐉
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web del universo Dragon Ball, desarrollada con React, TypeScript y Vite.
 
-Currently, two official plugins are available:
+## 🚀 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Exploración de personajes**: Navega por una amplia colección de personajes de Dragon Ball
+- **Búsqueda inteligente**: Encuentra personajes específicos con búsqueda en tiempo real
+- **Sistema de favoritos**: Guarda tus personajes favoritos
+- **Responsive design**: Optimizada para dispositivos móviles y desktop
+- **Navegación fluida**: Experiencia SPA con React Router
 
-## Expanding the ESLint configuration
+## 🛠️ Stack Tecnológico
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React 19.1.0 + TypeScript
+- **Build Tool**: Vite 6.3.5
+- **Routing**: React Router 7.6.2
+- **Testing**: Vitest + Testing Library
+- **Linting**: ESLint
+- **API**: [Dragon Ball API](https://web.dragonball-api.com/) 
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Instalación y Ejecución
+
+### Prerrequisitos
+- Node.js (versión 18 o superior)
+- npm
+
+### Pasos de instalación
+
+1. **Clonar el repositorio**
+```bash
+git clone [https://github.com/pararcastro/ioplogistica-web-challenge.git]
+cd zara-challenge
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. **Instalar dependencias**
+```bash
+npm install
 ```
+
+3. **Ejecutar en modo desarrollo**
+```bash
+npm run dev
+```
+
+4. **Abrir en el navegador**
+    [localhost](http://localhost:5173)
+
+
+### Scripts disponibles
+
+```bash
+npm run dev          # Ejecuta la aplicación en modo desarrollo
+npm run build        # Genera build de producción
+npm run preview      # Previsualiza el build de producción
+npm run lint         # Ejecuta ESLinT
+```
+
+
+## 🧪 Testing
+
+La aplicación incluye una suite completa de tests:
+
+### Tipos de tests implementados
+- **Unit tests**: Componentes individuales
+- **Integration tests**: Flujos completos de usuario
+- **Hook tests**: Custom hooks con timers
+- **API tests**: Mocking de servicios externos
+
+### Ejecutar tests
+```bash
+npm run test        # Modo watch
+npm run test:run    # Ejecución única
+npm run test:ui     # Interfaz visual
