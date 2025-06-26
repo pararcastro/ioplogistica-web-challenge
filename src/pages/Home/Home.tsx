@@ -3,7 +3,7 @@ import SearchBar from "../../components/SearchBar/SearchBar"
 import Loader from "../../components/Loader/Loader";
 import './Home.css';
 
-import { useCharacterContext } from "../../context/CharactersContext";
+import { useCharacterContext } from "../../context/Characters/CharactersContext";
 import { useCharacterSearch } from "../../hooks/useCharacterSearch";
 
 export const Home = () => {

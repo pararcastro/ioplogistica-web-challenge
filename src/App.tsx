@@ -5,7 +5,7 @@ import HeaderMenu from './components/HeaderMenu/HeaderMenu';
 
 import { Home } from './pages/Home/Home';
 import { FavouritesCharacter } from './pages/FavouriteCharacters/FavouriteCharacters';
-import { CharacterProvider } from './context/CharactersContext';
+import { CharacterProvider } from './context/Characters/CharactersContext';
 import { CharacterDetail } from './pages/CharacterDetail/CharacterDetailPage';
 
 

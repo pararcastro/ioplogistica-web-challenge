@@ -1,6 +1,6 @@
 import { createContext, useState, useContext, } from "react"
 import type { JSX, ReactNode } from "react";
-import type { Character } from "../components/CharacterCard/types";
+import type { Character } from "../../components/CharacterCard/types";
 
 
 interface CharacterContextType {

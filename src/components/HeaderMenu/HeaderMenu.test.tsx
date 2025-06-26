@@ -2,8 +2,10 @@ import { describe, test, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router';
 import HeaderMenu from './HeaderMenu';
-import CharacterContext from '../../context/CharactersContext';
-import { type Character } from '../../interfaces';
+import type { Character } from '../CharacterCard/types';
+import CharacterContext from '../../context/Characters/CharactersContext';
+
+
 
 type CharacterContextType = {
     likedCharacters: Character[];
@@ -60,7 +62,9 @@ describe('HeaderMenu', () => {
 
         renderWithProviders(contextWithFavorites);
 
-        expect(screen.getByText('2')).toBeInTheDocument();
+        const counter = screen.getByTestId('fav-counter');
+        expect(counter).toHaveTextContent('2');
+
     });
 
     test('has correct navigation links', () => {

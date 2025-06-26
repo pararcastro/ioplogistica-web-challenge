@@ -1,5 +1,5 @@
 import { useLocation } from "react-router";
-import { useCharacterContext } from "../../context/CharactersContext";
+import { useCharacterContext } from "../../context/Characters/CharactersContext";
 import { useEffect, useState, type FC } from "react";
 
 import type { Transformation } from "./types";

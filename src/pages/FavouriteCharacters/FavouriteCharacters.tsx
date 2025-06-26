@@ -1,5 +1,5 @@
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
-import {useCharacterContext} from "../../context/CharactersContext";
+import {useCharacterContext} from "../../context/Characters/CharactersContext";
 
 import './FavouriteCharacters.css';
 

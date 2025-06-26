@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import logo from '@assets/img/Dragon-Ball-Logo.png';
 import heart from '@assets/img/heart.svg';
 
-import { useCharacterContext } from '../../context/CharactersContext';
+import { useCharacterContext } from '../../context/Characters/CharactersContext';
 
 import './HeaderMenu.css';
 
