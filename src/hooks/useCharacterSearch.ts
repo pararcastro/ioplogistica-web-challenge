@@ -1,4 +1,4 @@
-import { useState, useEffect, type ErrorInfo } from 'react';
+import { useState, useEffect} from 'react';
 import { DragonBallAPI } from '../services/apiService';
 import { useDebounce } from './useDebounce';
 import type { Character } from '../components/CharacterCard/types';
