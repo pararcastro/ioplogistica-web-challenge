@@ -31,7 +31,7 @@ export const CharacterDetail: FC = () => {
         }
 
         fetchCharacterDetails();
-    }, []);
+    }, [character.id]);
 
     
     function toggleLike(character: Character): void {
