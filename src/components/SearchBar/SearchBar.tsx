@@ -1,6 +1,6 @@
-import { useState } from "react";
-import magnifierIcon from "../../assets/magnifier.svg";
 import './SearchBar.css'; 
+import magnifierIcon from '@assets/img/magnifier.svg';
+
 
 type SearchBarProps = {
     onSearch: (query: string) => void;

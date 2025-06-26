@@ -1,9 +1,15 @@
-const API_BASE_URL = "https://dragonball-api.com/api";
-import type { CharacterDetail, Character } from '../interfaces';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+import type { Character } from "../components/CharacterCard/types";
+import type { Transformation } from "../pages/CharacterDetail/types";
 
 
-export interface CharacterResponse {
+interface CharacterResponse {
   items: Character[];
+}
+
+interface CharacterDetail extends Character {
+  transformations: Transformation[];
 }
 
 

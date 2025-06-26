@@ -2,13 +2,14 @@ import { useLocation } from "react-router";
 import { useCharacterContext } from "../../context/CharactersContext";
 import { useEffect, useState, type FC } from "react";
 
-import type { Character, Transformation } from "../../interfaces";
+import type { Transformation } from "./types";
+import type { Character } from "../../components/CharacterCard/types";
 import { DragonBallAPI } from "../../services/apiService";
 
-import heart from '../../assets/heart.svg';
-import heartOutline from '../../assets/heart-outline.svg';
-import './CharacterDetail.css';
+import heart from '@assets/img/heart.svg';
+import heartOutline from '@assets/img/heart-outline.svg';
 
+import './CharacterDetail.css';
 
 
 

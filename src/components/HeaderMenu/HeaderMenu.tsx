@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
-import logo from '../../assets/Dragon-Ball-Logo.png';
-import heart from '../../assets/heart.svg';
+import logo from '@assets/img/Dragon-Ball-Logo.png';
+import heart from '@assets/img/heart.svg';
+
 import { useCharacterContext } from '../../context/CharactersContext';
 
 import './HeaderMenu.css';

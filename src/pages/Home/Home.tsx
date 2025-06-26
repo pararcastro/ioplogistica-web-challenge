@@ -1,7 +1,7 @@
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import SearchBar from "../../components/SearchBar/SearchBar"
 import Loader from "../../components/Loader/Loader";
-import '../../App.css';
+import './Home.css';
 
 import { useCharacterContext } from "../../context/CharactersContext";
 import { useCharacterSearch } from "../../hooks/useCharacterSearch";

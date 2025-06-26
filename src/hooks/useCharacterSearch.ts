@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { DragonBallAPI } from '../services/apiService';
 import { useDebounce } from './useDebounce';
-import type { Character } from '../interfaces';
+import type { Character } from '../components/CharacterCard/types';
+
 
 export function useCharacterSearch() {
   const [characters, setCharacters] = useState<Character[]>([]);
