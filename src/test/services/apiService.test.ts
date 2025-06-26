@@ -1,5 +1,5 @@
 import { describe, test, expect, vi, beforeEach } from 'vitest'
-import { DragonBallAPI } from './apiService'
+import { DragonBallAPI } from '../../services/apiService'
 
 // Mock global fetch
 globalThis.fetch = vi.fn()

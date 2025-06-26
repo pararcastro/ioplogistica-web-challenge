@@ -1,8 +1,8 @@
 import { describe, test, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router';
-import HeaderMenu from './HeaderMenu';
-import type { Character } from '../CharacterCard/types';
+import HeaderMenu from '../../components/HeaderMenu/HeaderMenu';
+import type { Character } from '../../components/CharacterCard/types';
 import CharacterContext from '../../context/Characters/CharactersContext';
 
 

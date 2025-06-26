@@ -1,7 +1,7 @@
 import { describe, test, expect, vi } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import { BrowserRouter } from 'react-router'
-import { Home } from './Home'
+import { Home } from '../../pages/Home/Home'
 import  {CharacterContext} from '../../context/Characters/CharactersContext'
 import { DragonBallAPI } from '../../services/apiService'
 

@@ -1,7 +1,7 @@
 import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { fireEvent, render, screen } from "@testing-library/react";
+import SearchBar from '../../components/SearchBar/SearchBar';
 
-import SearchBar from './SearchBar';
 
 describe('SearchBar', () => {
     const mockOnSearch = vi.fn();

@@ -1,8 +1,8 @@
 import { describe, test, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter } from "react-router";
-import CharacterCard from "./CharacterCard";
-import type { Character } from './types';
+import CharacterCard from "../../components/CharacterCard/CharacterCard";
+import type { Character } from '../../components/CharacterCard/types';
 
 const mockCharacter: Character = {
     id: 1,
