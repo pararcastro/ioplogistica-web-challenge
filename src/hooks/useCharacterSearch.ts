@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ErrorInfo } from 'react';
 import { DragonBallAPI } from '../services/apiService';
 import { useDebounce } from './useDebounce';
 import type { Character } from '../components/CharacterCard/types';
@@ -43,9 +43,13 @@ export function useCharacterSearch() {
       try {
         const data = await DragonBallAPI.searchByName(debouncedSearchQuery);
         setFilteredCharacters(data?.items || []);
-      } catch (error) {
-        setError('Error al buscar personajes');
-        setFilteredCharacters([]);
+      } catch (err) {
+       if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('Hubo un error en la busqueda');
+      }
+      setFilteredCharacters([]);
       } finally {
         setSearchLoading(false);
       }
