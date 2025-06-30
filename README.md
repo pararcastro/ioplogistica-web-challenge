@@ -31,6 +31,11 @@ Una aplicación web del universo Dragon Ball, desarrollada con React, TypeScript
 ```bash
 git clone https://github.com/pararcastro/ioplogistica-web-challenge.git
 ```
+1.1 Crear un archivo *.env* en la carpeta raíz del proyecto con este contenido:
+```bash
+VITE_API_BASE_URL=https://dragonball-api.com/api
+```
+
 
 2. **Instalar dependencias**
 ```bash
